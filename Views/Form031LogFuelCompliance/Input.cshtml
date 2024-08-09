@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewBag.Title = "Input";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                    <h6 class="text-white text-capitalize ps-3">Form Checklist Fuel Compliance</h6>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <a href="@ViewBag.pathParent/form/bss/log/031/" id="btnSave" class="btn btn-md btn-danger">
+                            <i class="material-icons opacity-10">keyboard_backspace</i> Kembali
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="input-group input-group-static mb-4">
+                            <label>Inputer</label>
+                            <input type="text" id="txtNik" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="input-group input-group-static mb-4">
+                            <label>Tahun</label>
+                            <input type="text" id="txtYear" class="form-control" readonly>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="input-group input-group-static mb-4">
+                            <label>Bulan</label>
+                            <input type="text" id="txtMonth" class="form-control" readonly>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="input-group input-group-static mb-4">
+                            <label>Minggu</label>
+                            <select class="form-control" id="ddWeek">
+                                <option value="">PILIH</option>
+                                <option value=1>Minggu ke-1</option>
+                                <option value=2>Minggu ke-2</option>
+                                <option value=3>Minggu ke-3</option>
+                                <option value=4>Minggu ke-4</option>
+                                <option value=5>Minggu ke-5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="table-responsive p-0">
+                            <table class="table compact table-bordered align-items-center mb-0" id="tblFuelStation" data-paging="false">
+                                <thead>
+                                    <tr style="border-bottom: solid #c0c0c0;">
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">Fuel Station</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Checklist</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment</th>
+                                        <!-- <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Week 2</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment W2</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Week 3</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment W3</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Week 4</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment W4</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Week 5</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment W5</th>-->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="table-responsive p-0">
+                            <table class="table compact table-bordered align-items-center mb-0" id="tblFuelTruck" data-paging="false">
+                                <thead>
+                                    <tr>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">Fuel Truck</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Checklist</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment</th>
+                                        <!--
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Week 2</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment W2</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Week 3</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment W3</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Week 4</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment W4</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Week 5</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment W5</th>-->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10"></div>
+                    <div class="col-sm-1">
+                        <button type="button" id="btnSave" class="btn bg-gradient-success" onclick="Save()">Simpan</button>
+                    </div>
+                    <div class="col-sm-1">
+                        <button  type="button" id="btnCancel" class="btn bg-gradient-danger">Batal</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/page/smf.fm031log.input.js"></script>

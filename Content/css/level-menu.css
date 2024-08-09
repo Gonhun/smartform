@@ -1,0 +1,26 @@
+﻿.navbar-nav {
+    list-style: none;
+    padding: 0;
+}
+
+    .navbar-nav .nav-item {
+        position: relative;
+    }
+
+        .navbar-nav .nav-item .submenu {
+            display: none;
+        }
+
+            .navbar-nav .nav-item .submenu li {
+                padding: 5px 10px;
+            }
+
+                .navbar-nav .nav-item .submenu li a {
+                    color: #fafafa;
+                    text-decoration: none;
+                }
+
+                    .navbar-nav .nav-item .submenu li a:hover {
+                        background-color: #070707;
+                        width: 100%;
+                    }

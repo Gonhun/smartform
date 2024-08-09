@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                    <h6 class="text-white text-capitalize ps-3">Form Checklist Fuel Compliance</h6>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <a href="@ViewBag.pathParent/form/bss/log/031/input" id="btnSave" class="btn btn-md btn-success">
+                            <i class="material-icons opacity-10">add</i> Input Checklist
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="table-responsive p-0">
+                            <table class="table compact table-bordered align-items-center mb-0" id="tblChecklist">
+                                <thead>
+                                    <tr>
+                                        @*<th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Action</th>*@
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Tahun</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Bulan</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Nik</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Week 1</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Validasi W1</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Week 2</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Validasi W2</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Week 3</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Validasi W3</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Week 4</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Validasi W4</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Week 5</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Validasi W5</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalValidasi" role="dialog" aria-labelledby="modalValidasilLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Approval</h5>
+                <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <input type="hidden" id="txtId" />
+            <input type="hidden" id="txtUser" />
+            <input type="hidden" id="txtYear" />
+            <input type="hidden" id="txtMonth" />
+            <input type="hidden" id="txtWeek" />
+            <input type="hidden" id="txtFlag" />
+            <div class="modal-body">
+                <div class="input-group input-group-static">
+                    <div class="input-group input-group-static mb-4">
+                        <label>Validator</label>
+                        <input type="text" id="txtNik" class="form-control">
+                    </div>
+                    <label for="exampleFormControlSelect2" class="ms-0">Status Validasi</label>
+                    <select class="form-control pb-4" id="ddStatus">
+                        <option value="">--PILIH STATUS--</option>
+                        <option value=true>APPROVE</option>
+                        <option value=false>REJECT</option>
+                    </select>
+                </div>
+                <div class="input-group input-group-dynamic">
+                    <textarea id="txtRemark" class="form-control" rows="5" placeholder="Isi note validasi" spellcheck="false"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" onclick="Approve()" class="btn bg-gradient-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/page/smf.fm031log.js"></script>
