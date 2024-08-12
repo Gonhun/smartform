@@ -429,6 +429,7 @@ function Save() {
         contentType: "application/json; charset=utf-8",
         complete: function (res) {
             alert(res.responseJSON.StatusMessage);
+            window.location = urlPath + "form/bss/log/031";
         }
     })
 }

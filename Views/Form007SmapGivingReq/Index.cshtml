@@ -23,18 +23,26 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="table-responsive p-0">
-                            <table class="table compact table-bordered align-items-center mb-0" id="tblGuft">
+                            <table class="table compact table-bordered align-items-center mb-0" id="tblGiving">
                                 <thead>
                                     <tr>
-                                        @*<th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Action</th>*@
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Action</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Nomor Pengajuan</th>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Nik Pengajuan</th>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Nama Pengajuan</th>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Posisi Pengajuan</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Kategori Pemberian</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Aktifitas Pemberian</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Tgl Pemberian</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Jenis Kegiatan Pemberian</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Tujuan Pemberian</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Dept Pengajuan</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Site Pengajuan</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Kategori Pemberian</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Sub Kategori Pemberian</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Aktifitas Pemberian</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Tgl Pemberian</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Nama Penerima</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Organisasi Penerima</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Hubungan Penerima</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Tujuan Pemberian</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Kronologi Pemberian</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Kelengkapan Data</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -48,3 +56,41 @@
     </div>
 </div>
 
+
+<div class="modal fade" id="modalValidasi" role="dialog" aria-labelledby="modalValidasilLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Approval</h5>
+                <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <input type="hidden" id="txtIdSmap" />
+            <div class="modal-body">
+                <div class="input-group input-group-static">
+                    <div class="input-group input-group-static mb-4">
+                        <label>Nik Validator</label>
+                        <input type="text" id="txtApprover" class="form-control">
+                    </div>
+                    <label for="exampleFormControlSelect2" class="ms-0">Status Validasi</label>
+                    <select class="form-control pb-4" id="ddStatus">
+                        <option value="">--PILIH STATUS--</option>
+                        <option value=true>APPROVE</option>
+                        <option value=false>REJECT</option>
+                    </select>
+                </div>
+                <div class="input-group input-group-dynamic">
+                    <textarea id="txtRemark" class="form-control" rows="5" placeholder="Isi note validasi" spellcheck="false"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" onclick="Approve()" class="btn bg-gradient-primary" data-bs-dismiss="modal">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/page/smf.fm007smap.js"></script>

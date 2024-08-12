@@ -104,7 +104,7 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="input-group input-group-static mb-4">
-                                            <label>Jenis Kegiatan Pemberian</label>
+                                            <label>Sub Kategori Pemberian</label>
                                             <select class="form-control" id="ddType">
                                                 
                                             </select>
@@ -116,7 +116,7 @@
                                         <div class="input-group input-group-static mb-4">
                                             <label>Taksiran Harga Nominal</label>
                                             <span class="input-group-text">Rp</span>
-                                            <input type="number" id="txtPrice" class="form-control">
+                                            <input type="number" id="txtNominal" min="0.01" step="0.01" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
@@ -137,7 +137,15 @@
                                     <div class="col-sm-6">
                                         <div class="input-group input-group-static mb-4">
                                             <label>Nama Kegiatan</label>
-                                            <input type="text" id="txtYear" class="form-control">
+                                            <input type="text" id="txtAktivitas" class="form-control">
+                                            <select class="form-control" id="ddAktivitas">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group input-group-static mb-4">
+                                            <label>Link Kelengkapan</label>
+                                            <input type="text" id="txtAttachment" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -145,13 +153,13 @@
                                     <div class="col-sm-6">
                                         <div class="input-group input-group-static mb-4">
                                             <label>Nama Penerima</label>
-                                            <input type="number" id="txtYear" class="form-control">
+                                            <input type="text" id="txtPenerima" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="input-group input-group-static mb-4">
                                             <label>Pekerjaan / Jabatan Penerima</label>
-                                            <input type="number" id="txtYear" class="form-control">
+                                            <input type="text" id="txtJabPenerima" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -159,13 +167,13 @@
                                     <div class="col-sm-6">
                                         <div class="input-group input-group-static mb-4">
                                             <label>Instansi / Organisasi Penerima</label>
-                                            <input type="number" id="txtYear" class="form-control">
+                                            <input type="text" id="txtOrganisasi" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="input-group input-group-static mb-4">
                                             <label>Alamat / Kontak Penerima</label>
-                                            <input type="number" id="txtYear" class="form-control">
+                                            <input type="text" id="txtAlamat" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -173,13 +181,22 @@
                                     <div class="col-sm-6">
                                         <div class="input-group input-group-static mb-4">
                                             <label>Hubungan dengan Pemberi</label>
-                                            <input type="number" id="txtYear" class="form-control">
+                                            <select class="form-control" id="ddRelasi">
+                                                <option value="">PILIH</option>
+                                                <option value="ATASAN">ATASAN</option>
+                                                <option value="BAWAHAN">BAWAHAN</option>
+                                                <option value="CUSTOMER">CUSTOMER</option>
+                                                <option value="VENDOR">VENDOR</option>
+                                                <option value="INSTANSI PEMERINTAH">INSTANSI PEMERINTAH</option>
+                                                <option value="REKAN KERJA">REKAN KERJA</option>
+                                                <option value="REKAN EXTERNAL">REKAN EXTERNAL</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="input-group input-group-static mb-4">
                                             <label>Tempat Pemberian</label>
-                                            <input type="number" id="txtYear" class="form-control">
+                                            <input type="text" id="txtTempatBeri" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -191,13 +208,13 @@
                                     <div class="col-sm-6">
                                         <div class="input-group input-group-static mb-4">
                                             <label>Tujuan Pemberian</label>
-                                            <input type="number" id="txtYear" class="form-control">
+                                            <input type="text" id="txtTujuan" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="input-group input-group-static mb-4">
                                             <label>Kronologi Pemberian</label>
-                                            <input type="number" id="txtYear" class="form-control">
+                                            <input type="text" id="txtKronologi" class="form-control">
                                         </div>
                                     </div>
                                 </div>
