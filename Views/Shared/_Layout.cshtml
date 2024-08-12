@@ -14,7 +14,8 @@
     <!-- CSS Files -->
     <link href="~/Content/css/material-dashboard.css" rel="stylesheet" />
     <link href="~/Content/datatables/css/datatables.min.css" rel="stylesheet" />
-    <link href="~/Content/select2/css/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/select2/css/select2.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
     <style>
         .navbar-nav {
             list-style: none;
@@ -86,26 +87,33 @@
                     </a>
                     <ul class="submenu navbar-nav" style="display: block;">
                         <li class="nav-item">
-                            <a href="@ViewBag.pathParent/form/bss/log/031" class="nav-link text-white " href="#" id="formLog031">
+                            <a href="@ViewBag.pathParent/form/bss/log/031" class="nav-link text-white" id="formLog031">
                                 <div class="text-white text-xs text-center d-flex align-items-center justify-content-center">
                                 </div>
                                 <span class="nav-link-text">Fuel Checklist Compliance</span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="@ViewBag.pathParent/form/bss/smap/007" class="nav-link text-white" id="formSmap007">
+                                <div class="text-white text-xs text-center d-flex align-items-center justify-content-center">
+                                </div>
+                                <span class="nav-link-text">Pengajuan Pemberian Hadiah</span>
+                            </a>
+                        </li>
                         @*<li class="nav-item">
-                                <a class="nav-link text-white bg-gradient-danger" href="https://newpica.binasaranasukses.co.id/add-smart-pica" id="dahsboardPica">
-                                    <div class="text-white text-center d-flex align-items-center justify-content-center">
-                                    </div>
-                                    <span class="nav-link-text">Add Pica</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white " href="https://newpica.binasaranasukses.co.id/update-progress" id="progressPica">
-                                    <div class="text-white text-center d-flex align-items-center justify-content-center">
-                                    </div>
-                                    <span class="nav-link-text">Update Progress</span>
-                                </a>
-                            </li>*@
+            <a class="nav-link text-white bg-gradient-danger" href="https://newpica.binasaranasukses.co.id/add-smart-pica" id="dahsboardPica">
+                <div class="text-white text-center d-flex align-items-center justify-content-center">
+                </div>
+                <span class="nav-link-text">Add Pica</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white " href="https://newpica.binasaranasukses.co.id/update-progress" id="progressPica">
+                <div class="text-white text-center d-flex align-items-center justify-content-center">
+                </div>
+                <span class="nav-link-text">Update Progress</span>
+            </a>
+        </li>*@
                     </ul>
                 </li>
             </ul>
@@ -172,7 +180,7 @@
     <script src="~/Scripts/js/plugins/chartjs.min.js"></script>
     <script src="~/Scripts/datatables/datatables.min.js"></script>
     <script src="~/Scripts/select2/js/select2.min.js"></script>
-
+    <script src="~/Scripts/jquery-ui/jquery-ui.min.js"></script>
     <script>
 
         $(document).ready(function () {

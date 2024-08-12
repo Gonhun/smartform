@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                    <h6 class="text-white text-capitalize ps-3">Pengajuan Pemberian Hadiah, Kemurahan Hati, Sumbangan, & Keuntungan Serupa</h6>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <a href="@ViewBag.pathParent/form/bss/smap/007/input" id="btnSave" class="btn btn-md btn-success">
+                            <i class="material-icons opacity-10">add</i> INPUT FORM PENGAJUAN BARU
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="table-responsive p-0">
+                            <table class="table compact table-bordered align-items-center mb-0" id="tblGuft">
+                                <thead>
+                                    <tr>
+                                        @*<th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Action</th>*@
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Nik Pengajuan</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Nama Pengajuan</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Posisi Pengajuan</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Kategori Pemberian</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Aktifitas Pemberian</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Tgl Pemberian</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Jenis Kegiatan Pemberian</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder">Tujuan Pemberian</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
