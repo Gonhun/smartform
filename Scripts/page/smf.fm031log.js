@@ -261,8 +261,16 @@ function loadGrid() {
 
                             return fogc_flag + '&nbsp;' + section_flag;
                         }
-                    }
+                    },
+                    {
+                        'data': 'mtd',
+                        className: 'dt-body-center dt-head-left',
+                        render: function (data, type, row) {
+                            return `<b>${row.mtd}%</b>`;
 
+                        },
+                        sortable: false,
+                    },
                 ],
             })
         }
