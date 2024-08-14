@@ -6,7 +6,7 @@ $(document).ready(function () {
 
 function loadGrid() {
     $.ajax({
-        url: urlPath + 'api/form/031/log/get',
+        url: urlPath + 'api/form/032/log/get',
         cache: false,
         method: "POST",
         //data: JSON.stringify({ groupName: "FUEL_STATION" }),
@@ -456,7 +456,6 @@ function Approve() {
                 contentType: "application/json; charset=utf-8",
                 complete: function (e) {
                     loadGrid();
-                    Cancel();
                     alert(e.responseJSON.StatusMessage);
                 }
             })
@@ -488,12 +487,12 @@ function Approve() {
                 contentType: "application/json; charset=utf-8",
                 complete: function (e) {
                     loadGrid();
-                    Cancel();
                     alert(e.responseJSON.StatusMessage);
                 }
             })
         }
     }
+
 }
 
 function Cancel() {

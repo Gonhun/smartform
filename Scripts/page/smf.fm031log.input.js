@@ -10,6 +10,21 @@ $(document).ready(function () {
     loadGridFuelTruck()
 })
 
+$("#txtNik").change(function () {
+    $.ajax({
+        url: urlPath + 'api/form/032/log/get/emp',
+        cache: false,
+        data: JSON.stringify({ nik: $("#txtNik").val() }),
+        method: "POST",
+        contentType: "application/json; charset=utf-8",
+        complete: function (res) {
+            console.log(res.responseJSON);
+            $("#txtNama").val(res.responseJSON.Value.name);
+            $("#txtJabatan").val(res.responseJSON.Value.jabatan);
+        }
+    })
+})
+
 function loadGridFuelStation() {
     $.ajax({
         url: urlPath + 'api/questionaire/get',
@@ -28,6 +43,15 @@ function loadGridFuelStation() {
                 "info": false,
                 "columns": [
                     {
+                        "data": "id_questionaire",
+                        width: '3%',
+                        className: 'dt-body-center dt-head-center',
+                        render: function (data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        },
+                        sortable: false,
+                    },
+                    {
                         'data': 'id_questionaire',
                         className: 'dt-body-left dt-head-left',
                         width: '30%',
@@ -39,6 +63,7 @@ function loadGridFuelStation() {
                     {
                         'data': 'questionaire_val',
                         className: 'dt-body-left dt-head-center dt-nowrap',
+                        width: '10%',
                         render: function (data, type, row) {``
                             let checklistId = row.id_questionaire
                             return `
@@ -211,6 +236,26 @@ function loadGridFuelTruck() {
                 "searching": false,
                 "info": false,
                 "columns": [
+                    //{
+                    //    "data": "id_questionaire",
+
+                    //    className: 'dt-body-center dt-head-center',
+                    //    width:'3%',
+                    //    render: function (data, type, row, meta) {
+                    //        return meta.row + meta.settings._iDisplayStart + 12;
+                    //    },
+                    //    sortable: false,
+                    //},
+                    {
+                        "data": "id_questionaire",
+
+                        className: 'dt-body-center dt-head-center',
+                        width: '3%',
+                        render: function (data, type, row, meta) {
+                            return row.sort_no;
+                        },
+                        sortable: false,
+                    },
                     {
                         'data': 'id_questionaire',
                         className: 'dt-body-left dt-head-left',
@@ -223,6 +268,8 @@ function loadGridFuelTruck() {
                     {
                         'data': 'questionaire_val',
                         className: 'dt-body-left dt-head-center dt-nowrap',
+                        width: '10%',
+
                         render: function (data, type, row) {
                             let checklistId = row.id_questionaire
                             return `
@@ -380,6 +427,7 @@ function loadGridFuelTruck() {
 
 function Save() {
     console.log("OK");
+    let y = 0;
     let i = 0;
     let checklistData;
     var rowStation = tableStation.rows().data().toArray();
@@ -401,12 +449,12 @@ function Save() {
         i++;
     }
 
-    while (i < rowTruck.length) {
-        var idRadio = rowStation[i].id_questionaire;
-        rowTruck[i].questionaire_val = $("input[type='radio'][name='" + idRadio + "']:checked").val();
-        rowTruck[i].questionaire_comment = $("#comment_" + idRadio).val();
+    while (y < rowTruck.length) {
+        var idTruck = rowTruck[y].id_questionaire;
+        rowTruck[y].questionaire_val = $("input[type='radio'][name='" + idTruck + "']:checked").val();
+        rowTruck[y].questionaire_comment = $("#comment_" + idTruck).val();
 
-        i++;
+        y++;
     }
     allRow = [].concat(rowStation, rowTruck);
 

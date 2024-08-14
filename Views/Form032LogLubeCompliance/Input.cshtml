@@ -9,7 +9,7 @@
         <div class="card my-4">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                 <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                    <h6 class="text-white text-capitalize ps-3">Form Checklist Fuel Compliance</h6>
+                    <h6 class="text-white text-capitalize ps-3">Form Checklist Lube Compliance</h6>
                 </div>
             </div>
             <div class="card-body">
@@ -17,7 +17,7 @@
                     <div class="col-sm-8">
                         <div class="row">
                             <div class="col-sm-2">
-                                <a href="@ViewBag.pathParent/form/bss/log/031/" id="btnSave" class="btn btn-md btn-danger">
+                                <a href="@ViewBag.pathParent/form/bss/log/032/" id="btnSave" class="btn btn-md btn-danger">
                                     <i class="material-icons opacity-10">keyboard_backspace</i> Kembali
                                 </a>
                             </div>
@@ -73,23 +73,23 @@
                     <div class="col-sm-4 align-self-sm-center" style="border-style: dotted">
                         <p></p>
                         <p class="text-sm">
-                            Definisi Fuel Compliance : Kepatuhan terhadap standart kelayakan penggunaan alat kerja maupun perlengkapan agar operasional fuel dapat berjalan lancar dan
-                            sesuai dengan kaedah keselamatan kerja.
+                            Definisi Lube Compliance : Kepatuhan terhadap standart kelayakan penggunaan alat kerja maupun perlengkapan agar operasional Lube meliputi : Oil, Grease, dan
+                            Coolant dapat berjalan lancar dan sesuai dengan kaedah keselamatan kerja.
                         </p>
-                        <p class="text-xs">
+                        <p class="text-sm">
                             Berikanlah informasi yang valid sesuai kondisi actual, apabila terdapat peralatan / perlengkapan yang tidak memenuhi standart atau tidak tersedia berikan catatan di
-                            kolom Coment
+                            kolom Coment.
                         </p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="table-responsive p-0">
-                            <table class="table compact table-bordered align-items-center mb-0" id="tblFuelStation" data-paging="false">
+                            <table class="table compact table-bordered align-items-center mb-0" id="tblLubeStation" data-paging="false">
                                 <thead>
                                     <tr style="border-bottom: solid #c0c0c0;">
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">#</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">Fuel Station</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">Lube Station</th>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">
                                             Checklist&nbsp;
                                             <i href="#" class="material-icons text-info btn-tooltip" data-bs-toggle="tooltip" data-bs-placement="top" title="Opsi Ya atau Tidak dipilih dengan kondisi aktual dari pertanyaan yang sudah diberikan" data-container="body" data-animation="true">
@@ -102,14 +102,6 @@
                                                 info
                                             </i>
                                         </th>
-                                        <!-- <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Week 2</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment W2</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Week 3</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment W3</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Week 4</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment W4</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Week 5</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment W5</th>-->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -122,11 +114,11 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="table-responsive p-0">
-                            <table class="table compact table-bordered align-items-center mb-0" id="tblFuelTruck" data-paging="false">
+                            <table class="table compact table-bordered align-items-center mb-0" id="tblLubeTruck" data-paging="false">
                                 <thead>
                                     <tr>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">#</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">Fuel Truck</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">Lube Truck</th>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">
                                             Checklist&nbsp;
                                             <i href="#" class="material-icons text-info btn-tooltip" data-bs-toggle="tooltip" data-bs-placement="top" title="Opsi Ya atau Tidak dipilih dengan kondisi aktual dari pertanyaan yang sudah diberikan" data-container="body" data-animation="true">
@@ -139,15 +131,6 @@
                                                 info
                                             </i>
                                         </th>
-                                        <!--
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Week 2</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment W2</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Week 3</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment W3</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Week 4</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment W4</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Week 5</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment W5</th>-->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -170,4 +153,4 @@
     </div>
 </div>
 
-<script src="~/Scripts/page/smf.fm031log.input.js"></script>
+<script src="~/Scripts/page/smf.fm032log.input.js"></script>
