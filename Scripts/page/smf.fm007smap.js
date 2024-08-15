@@ -84,6 +84,11 @@ function loadGrid() {
                         }
                     },
                     {
+                        'data': 'giving_price',
+                        className: 'dt-body-left dt-head-left',
+                        render: $.fn.dataTable.render.number(',', '.', 2, 'Rp')
+                    },
+                    {
                         'data': 'giving_date',
                         className: 'dt-body-left dt-head-left',
                         render: function (data, type, row) {
