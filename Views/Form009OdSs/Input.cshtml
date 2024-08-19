@@ -1,0 +1,260 @@
+﻿
+@{
+    ViewBag.Title = "Input";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/multi-file-input.css" rel="stylesheet" />
+
+<div class="row">
+    <div class="col-12">
+        <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                    <h6 class="text-white text-capitalize ps-3">Form Suggestion System</h6>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <a href="@ViewBag.pathParent/form/bss/od/009/" id="btnSave" class="btn btn-md btn-danger">
+                                    <i class="material-icons opacity-10">keyboard_backspace</i> Kembali
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card card-frame">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <div class="input-group input-group-static mb-4">
+                                                    <label>Ide Perbaikan</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Quality
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Cost
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Delivery
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Safety
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Morale
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card card-frame">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="input-group input-group-static mb-4">
+                                                    <label>Tanggal Pemberian</label>
+                                                    <input id="txtTgl" class="form-control" readonly="readonly">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="input-group input-group-static mb-4">
+                                                    <label>No Ide</label>
+                                                    <input type="text" id="txtNama" class="form-control" placeholder="Otomatis terbuat saat SS disimpan" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="input-group input-group-static mb-4">
+                                                    <label>Site</label>
+                                                    <select class="form-control" id="ddSite">
+                                                        <option value="">PILIH</option>
+                                                        @foreach (var item in ViewBag.Site)
+                                                        {
+                                                            <option value="@item.Key">@item.Value</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="input-group input-group-static mb-4">
+                                                    <label>Nik Pembuat</label>
+                                                    <input type="text" id="txtNik" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="input-group input-group-static mb-4">
+                                                    <label>Nama Pembuat</label>
+                                                    <input type="text" id="txtNama" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="input-group input-group-static mb-4">
+                                                    <label>Jabatan Pemohon</label>
+                                                    <input type="text" id="txtNama" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="input-group input-group-static mb-4">
+                                                    <label>Tanggal Penemuan</label>
+                                                    <input id="dtTglSs" class="form-control" readonly="readonly">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="input-group input-group-static mb-4">
+                                                    <label>Lokasi Penemuan</label>
+                                                    <input type="text" id="txtLocation" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="input-group input-group-static mb-4">
+                                                    <label>Hubungan dengan pekerjaan</label>
+                                                    <select class="form-control" id="ddSite">
+                                                        <option value="">PILIH</option>
+                                                        <option value=0>BUKAN PEKERJAANNYA</option>
+                                                        <option value=1>PEKERJAANNYA</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="card card-frame">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="input-group input-group-static mb-4">
+                                                    <label>Judul ide perbaikan</label>
+                                                    <input type="text" id="txtNama" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="input-group input-group-static mb-4">
+                                                    <label>Masalah yang dihadapi</label>
+                                                    <input type="text" id="txtNama" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="input-group input-group-static mb-4">
+                                                    <label>Uraian masalah</label>
+                                                    <div class="row form-control">
+                                                        <div class="col-sm-12">
+                                                            <div id="toolbar-container">
+                                                                <span class="ql-formats">
+                                                                    <select class="ql-font"></select>
+                                                                    <select class="ql-size"></select>
+                                                                </span>
+                                                                <span class="ql-formats">
+                                                                    <button class="ql-bold"></button>
+                                                                    <button class="ql-italic"></button>
+                                                                    <button class="ql-underline"></button>
+                                                                    <button class="ql-strike"></button>
+                                                                </span>
+                                                                <span class="ql-formats">
+                                                                    <select class="ql-color"></select>
+                                                                    <select class="ql-background"></select>
+                                                                </span>
+                                                                <span class="ql-formats">
+                                                                    <button class="ql-script" value="sub"></button>
+                                                                    <button class="ql-script" value="super"></button>
+                                                                </span>
+                                                                <span class="ql-formats">
+                                                                    <button class="ql-header" value="1"></button>
+                                                                    <button class="ql-header" value="2"></button>
+                                                                    <button class="ql-blockquote"></button>
+                                                                    <button class="ql-code-block"></button>
+                                                                </span>
+                                                                <span class="ql-formats">
+                                                                    <button class="ql-list" value="ordered"></button>
+                                                                    <button class="ql-list" value="bullet"></button>
+                                                                    <button class="ql-indent" value="-1"></button>
+                                                                    <button class="ql-indent" value="+1"></button>
+                                                                </span>
+                                                                <span class="ql-formats">
+                                                                    <button class="ql-direction" value="rtl"></button>
+                                                                    <select class="ql-align"></select>
+                                                                </span>
+                                                                <span class="ql-formats">
+                                                                    <button class="ql-link"></button>
+                                                                    <button class="ql-image"></button>
+                                                                    <button class="ql-video"></button>
+                                                                    <button class="ql-formula"></button>
+                                                                </span>
+                                                                <span class="ql-formats">
+                                                                    <button class="ql-clean"></button>
+                                                                </span>
+                                                            </div>
+                                                            <div id="editor-container" style="flex: 1;">
+                                                                <div id="editor" style="flex: 1; width:100%;height:100%;">Sample</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="input-group input-group-static mb-4">
+                                                    <label>Upload foto uraian masalah</label>
+                                                    <textarea class="form-control input-group-outline" rows="1" placeholder="Uraikan masalah pada bagian ini"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10"></div>
+                    <div class="col-sm-1">
+                        <button type="button" id="btnSave" class="btn bg-gradient-success" onclick="Save()">Simpan</button>
+                    </div>
+                    <div class="col-sm-1">
+                        <button type="button" id="btnCancel" class="btn bg-gradient-danger">Batal</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/page/smf.fm009od.input.js"></script>

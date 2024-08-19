@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                    <h6 class="text-white text-capitalize ps-3">Suggestion System</h6>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <a href="@ViewBag.pathParent/form/bss/od/009/input" id="btnSave" class="btn btn-md btn-success">
+                            <i class="material-icons opacity-10">add</i> INPUT SS BARU
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="table-responsive p-0">
+                            <table class="table compact table-bordered align-items-center mb-0" id="tblGiving">
+                                <thead>
+                                    <tr>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modalValidasi" role="dialog" aria-labelledby="modalValidasilLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Approval</h5>
+                <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <input type="hidden" id="txtIdSmap" />
+            <div class="modal-body">
+                <div class="input-group input-group-static">
+                    <div class="input-group input-group-static mb-4">
+                        <label>Nik Validator</label>
+                        <input type="text" id="txtApprover" class="form-control">
+                    </div>
+                    <label for="exampleFormControlSelect2" class="ms-0">Status Validasi</label>
+                    <select class="form-control pb-4" id="ddStatus">
+                        <option value="">--PILIH STATUS--</option>
+                        <option value=true>APPROVE</option>
+                        <option value=false>REJECT</option>
+                    </select>
+                </div>
+                <div class="input-group input-group-dynamic">
+                    <textarea id="txtRemark" class="form-control" rows="5" placeholder="Isi note validasi" spellcheck="false"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" onclick="Approve()" class="btn bg-gradient-primary" data-bs-dismiss="modal">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
