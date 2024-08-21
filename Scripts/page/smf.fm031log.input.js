@@ -12,7 +12,7 @@ $(document).ready(function () {
 
 $("#txtNik").change(function () {
     $.ajax({
-        url: urlPath + '/api/form/032/log/get/emp',
+        url: urlPath + '/api/form/031/log/get/emp',
         cache: false,
         data: JSON.stringify({ nik: $("#txtNik").val() }),
         method: "POST",
