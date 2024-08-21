@@ -12,7 +12,7 @@ $(document).ready(function () {
 
 $("#txtNik").change(function () {
     $.ajax({
-        url: urlPath + 'api/form/032/log/get/emp',
+        url: urlPath + '/api/form/032/log/get/emp',
         cache: false,
         data: JSON.stringify({ nik: $("#txtNik").val() }),
         method: "POST",
@@ -27,7 +27,7 @@ $("#txtNik").change(function () {
 
 function loadGridFuelStation() {
     $.ajax({
-        url: urlPath + 'api/questionaire/get',
+        url: urlPath + '/api/questionaire/get',
         cache: false,
         method: "POST",
         data: JSON.stringify({ groupName: "FUEL_STATION" }),
@@ -221,7 +221,7 @@ function loadGridFuelStation() {
 
 function loadGridFuelTruck() {
     $.ajax({
-        url: urlPath + 'api/questionaire/get',
+        url: urlPath + '/api/questionaire/get',
         cache: false,
         method: "POST",
         data: JSON.stringify({ groupName: "FUEL_TRUCK" }),
@@ -469,7 +469,7 @@ function Save() {
     }
 
     $.ajax({
-        url: urlPath + "api/form/031/log/insert",
+        url: urlPath + "/api/form/031/log/insert",
         type: 'POST',
         dataType: "json",
         cache: false,

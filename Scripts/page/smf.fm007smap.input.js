@@ -43,7 +43,7 @@ $("#ddCategory").change(function () {
 function loadDdDept() {
     var i = 0;
     $.ajax({
-        url: urlPath + 'api/form/007/smap/get/dept',
+        url: urlPath + '/api/form/007/smap/get/dept',
         cache: false,
         method: "POST",
         contentType: "application/json; charset=utf-8",
@@ -69,7 +69,7 @@ function loadDdDept() {
 function loadDdCategory() {
     var i = 0;
     $.ajax({
-        url: urlPath + 'api/form/007/smap/get/ref',
+        url: urlPath + '/api/form/007/smap/get/ref',
         cache: false,
         method: "POST",
         contentType: "application/json; charset=utf-8",
@@ -95,7 +95,7 @@ function loadDdCategory() {
 function loadDdType() {
     var i = 0;
     $.ajax({
-        url: urlPath + 'api/form/007/smap/get/subref',
+        url: urlPath + '/api/form/007/smap/get/subref',
         cache: false,
         method: "POST",
         data: JSON.stringify({ id: $("#ddCategory").val() }),
@@ -122,7 +122,7 @@ function loadDdType() {
 function loadDdActivity() {
     var i = 0;
     $.ajax({
-        url: urlPath + 'api/form/007/smap/get/activity',
+        url: urlPath + '/api/form/007/smap/get/activity',
         cache: false,
         method: "POST",
         data: JSON.stringify({ id: $("#ddCategory").val() }),
@@ -172,7 +172,7 @@ function Save() {
     }
 
     $.ajax({
-        url: urlPath + "api/form/007/smap/insert",
+        url: urlPath + "/api/form/007/smap/insert",
         type: 'POST',
         dataType: "json",
         cache: false,

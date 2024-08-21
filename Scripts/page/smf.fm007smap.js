@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 function loadGrid() {
     $.ajax({
-        url: urlPath + 'api/form/007/smap/get',
+        url: urlPath + '/api/form/007/smap/get',
         cache: false,
         method: "POST",
         //data: JSON.stringify({ parameter: S_DATA }),
@@ -149,7 +149,7 @@ function Approve() {
     }
 
     $.ajax({
-        url: urlPath + "api/form/007/smap/approve",
+        url: urlPath + "/api/form/007/smap/approve",
         type: 'POST',
         dataType: "json",
         cache: false,
