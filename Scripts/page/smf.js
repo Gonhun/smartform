@@ -44,7 +44,7 @@ function getMenu() {
                 while (j < rowChild.length) {
                     document.getElementById("parent" + rowChild[j].parent).innerHTML = document.getElementById("parent" + rowChild[j].parent).innerHTML
                         + `<li class="nav-item">
-                                <a href="${urlPath + rowChild[j].url}" class="nav-link child text-white child" id="form${rowChild[j].id}">
+                                <a href="${rowChild[j].domain + rowChild[j].url}" class="nav-link child text-white child" id="form${rowChild[j].id}">
                                     <div class="text-white text-xs text-center d-flex align-items-center justify-content-center">
                                     </div>
                                     <span class="nav-link-text">${rowChild[j].nama}</span>
