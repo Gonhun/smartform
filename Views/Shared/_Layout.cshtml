@@ -49,7 +49,8 @@
             vertical-align: middle;
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     <!-- Font Awesome Icons -->
     @*<script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>*@
     @{
@@ -193,14 +194,6 @@
     </main>
 
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".parentMenu").on("click", function () {
-                $(this).next(".submenu").slideToggle();
-            });
-        })
-    </script>
-
     <!--   Core JS Files   -->
     <script src="~/Scripts/moment.min.js"></script>
     <script src="~/Scripts/js/core/popper.min.js"></script>
@@ -209,13 +202,35 @@
     <script src="~/Scripts/js/plugins/smooth-scrollbar.min.js"></script>
     <script src="~/Scripts/js/plugins/chartjs.min.js"></script>
     <script src="~/Scripts/datatables/datatables.min.js"></script>
+    <script src="~/Scripts/jsplumb-tree.js"></script>
     <script src="~/Scripts/select2/js/select2.min.js"></script>
     <script src="~/Scripts/quill.js"></script>
     <script src="~/Scripts/jquery-ui/jquery-ui.min.js"></script>
     <script src="~/Scripts/page/smf.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var currentUrl = window.location.href;
+            $('.nav-link').each(function () {
+                if (this.href === currentUrl) {
+                    $(this).addClass('bg-gradient-danger');
+                    // Ensure the parent submenu is visible
+                    $(this).closest('.submenu').show();
+                    // Add a class to the parent nav-item to keep the submenu open
+                    $(this).closest('.nav-item').addClass('active');
+                }
+            });
 
+            var win = navigator.platform.indexOf('Win') > -1;
+            if (win && document.querySelector('#sidenav-scrollbar')) {
+                var options = {
+                    damping: '0.5'
+                }
+                Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+            }
+        });
+    </script>
 
-    <script src="~/Scripts/js/material-dashboard.min.js?v=3.1.0"></script>
+    <script src="~/Scripts/js/material-dashboard.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
