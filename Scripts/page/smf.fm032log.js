@@ -60,7 +60,11 @@ function loadGrid() {
                         'data': 'avg_score_week_1',
                         className: 'dt-body-center dt-head-center dt-nowrap',
                         render: function (data, type, row) {
-                            return `<b>${ row.avg_score_week_1 }%</b>`;
+                            if (row.is_fogc_valid_week_1 == null) {
+                                return `<b>0%</b>`;
+                            } else {
+                                return `<b>${row.avg_score_week_1}%</b>`;
+                            }
                         },
                         sortable: false,
                     },
@@ -102,8 +106,11 @@ function loadGrid() {
                         'data': 'avg_score_week_2',
                         className: 'dt-body-center dt-head-center dt-nowrap',
                         render: function (data, type, row) {
-                            return `<b>${row.avg_score_week_2}%</b>`;
-
+                            if (row.is_fogc_valid_week_2 == null) {
+                                return `<b>0%</b>`;
+                            } else {
+                                return `<b>${row.avg_score_week_2}%</b>`;
+                            }
                         },
                         sortable: false,
                     },
@@ -145,7 +152,11 @@ function loadGrid() {
                         'data': 'avg_score_week_3',
                         className: 'dt-body-center dt-head-center dt-nowrap',
                         render: function (data, type, row) {
-                            return `<b>${row.avg_score_week_3}%</b>`;
+                            if (row.is_fogc_valid_week_3 == null) {
+                                return `<b>0%</b>`;
+                            } else {
+                                return `<b>${row.avg_score_week_3}%</b>`;
+                            }
                         },
                         sortable: false,
                     },
@@ -189,7 +200,11 @@ function loadGrid() {
                         'data': 'avg_score_week_4',
                         className: 'dt-body-center dt-head-center dt-nowrap',
                         render: function (data, type, row) {
-                            return `<b>${row.avg_score_week_4}%</b>`;
+                            if (row.is_fogc_valid_week_4 == null) {
+                                return `<b>0%</b>`;
+                            } else {
+                                return `<b>${row.avg_score_week_4}%</b>`;
+                            }
                         },
                         sortable: false,
                     },
@@ -233,8 +248,11 @@ function loadGrid() {
                         'data': 'avg_score_week_5',
                         className: 'dt-body-center dt-head-center dt-nowrap',
                         render: function (data, type, row) {
-                            return `<b>${row.avg_score_week_5}%</b>`;
-
+                            if (row.is_fogc_valid_week_5 == null) {
+                                return `<b>0%</b>`;
+                            } else {
+                                return `<b>${row.avg_score_week_5}%</b>`;
+                            }
                         },
                         sortable: false,
                     },
