@@ -296,7 +296,7 @@ function loadGrid() {
                         'data': 'id_checklist',
                         className: 'dt-body-center dt-head-center dt-nowrap',
                         render: function (data, type, row) {
-                            if (row.avg_score_week_5 . 0) {
+                            if (row.avg_score_week_5 > 0) {
                                 return `<button type="button" id="detailWeek5" class="btn btn-sm bg-gradient-info" data-bs-toggle="modal" data-bs-target="#modalChecklist">Detail Checklist</button>`;
                             } else {
                                 return `<b>BELUM DIINPUT</b>`;

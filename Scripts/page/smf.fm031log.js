@@ -237,7 +237,7 @@ function loadGrid() {
                         'data': 'id_checklist',
                         className: 'dt-body-center dt-head-center dt-nowrap',
                         render: function (data, type, row) {
-                            if (row.avg_score_week_4 != null) {
+                            if (row.avg_score_week_4 > 0) {
                                 return `<button type="button" id="detailWeek4" class="btn btn-sm bg-gradient-info" data-bs-toggle="modal" data-bs-target="#modalChecklist">Detail Checklist</button>`;
                             } else {
                                 return `<b>BELUM DIINPUT</b>`;
@@ -249,7 +249,7 @@ function loadGrid() {
                         'data': 'avg_score_week_4',
                         className: 'dt-body-center dt-head-center dt-nowrap',
                         render: function (data, type, row) {
-                            if (row.is_fogc_valid_week_4 > 0) {
+                            if (row.is_fogc_valid_week_4 != null) {
                                 return `<b>0%</b>`;
                             } else {
                                 return `<b>${row.avg_score_week_4}%</b>`;
