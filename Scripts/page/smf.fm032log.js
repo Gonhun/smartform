@@ -57,6 +57,18 @@ function loadGrid() {
                         className: 'dt-body-left dt-head-left',
                     },
                     {
+                        'data': 'id_checklist',
+                        className: 'dt-body-center dt-head-center dt-nowrap',
+                        render: function (data, type, row) {
+                            if (row.avg_score_week_1 != null) {
+                                return `<button type="button" id="detailWeek1" class="btn btn-sm bg-gradient-info" data-bs-toggle="modal" data-bs-target="#modalChecklist">Detail Checklist</button>`;
+                            } else {
+                                return `<b>BELUM DIINPUT</b>`;
+                            }
+                        },
+                        sortable: false,
+                    },
+                    {
                         'data': 'avg_score_week_1',
                         className: 'dt-body-center dt-head-center dt-nowrap',
                         render: function (data, type, row) {
@@ -103,6 +115,18 @@ function loadGrid() {
                         }
                     },
                     {
+                        'data': 'id_checklist',
+                        className: 'dt-body-center dt-head-center dt-nowrap',
+                        render: function (data, type, row) {
+                            if (row.avg_score_week_2 != null) {
+                                return `<button type="button" id="detailWeek2" class="btn btn-sm bg-gradient-info" data-bs-toggle="modal" data-bs-target="#modalChecklist">Detail Checklist</button>`;
+                            } else {
+                                return `<b>BELUM DIINPUT</b>`;
+                            }
+                        },
+                        sortable: false,
+                    },
+                    {
                         'data': 'avg_score_week_2',
                         className: 'dt-body-center dt-head-center dt-nowrap',
                         render: function (data, type, row) {
@@ -147,6 +171,18 @@ function loadGrid() {
                             }
                             return fogc_flag + '&nbsp;' + section_flag;
                         }
+                    },
+                    {
+                        'data': 'id_checklist',
+                        className: 'dt-body-center dt-head-center dt-nowrap',
+                        render: function (data, type, row) {
+                            if (row.avg_score_week_3 != null) {
+                                return `<button type="button" id="detailWeek3" class="btn btn-sm bg-gradient-info" data-bs-toggle="modal" data-bs-target="#modalChecklist">Detail Checklist</button>`;
+                            } else {
+                                return `<b>BELUM DIINPUT</b>`;
+                            }
+                        },
+                        sortable: false,
                     },
                     {
                         'data': 'avg_score_week_3',
@@ -197,6 +233,18 @@ function loadGrid() {
                         }
                     },
                     {
+                        'data': 'id_checklist',
+                        className: 'dt-body-center dt-head-center dt-nowrap',
+                        render: function (data, type, row) {
+                            if (row.avg_score_week_4 != null) {
+                                return `<button type="button" id="detailWeek4" class="btn btn-sm bg-gradient-info" data-bs-toggle="modal" data-bs-target="#modalChecklist">Detail Checklist</button>`;
+                            } else {
+                                return `<b>BELUM DIINPUT</b>`;
+                            }
+                        },
+                        sortable: false,
+                    },
+                    {
                         'data': 'avg_score_week_4',
                         className: 'dt-body-center dt-head-center dt-nowrap',
                         render: function (data, type, row) {
@@ -243,6 +291,18 @@ function loadGrid() {
 
                             return fogc_flag + '&nbsp;' + section_flag;
                         }
+                    },
+                    {
+                        'data': 'id_checklist',
+                        className: 'dt-body-center dt-head-center dt-nowrap',
+                        render: function (data, type, row) {
+                            if (row.avg_score_week_5 != null) {
+                                return `<button type="button" id="detailWeek5" class="btn btn-sm bg-gradient-info" data-bs-toggle="modal" data-bs-target="#modalChecklist">Detail Checklist</button>`;
+                            } else {
+                                return `<b>BELUM DIINPUT</b>`;
+                            }
+                        },
+                        sortable: false,
                     },
                     {
                         'data': 'avg_score_week_5',
@@ -306,6 +366,167 @@ function loadGrid() {
         }
     })
 }
+
+function loadDetailStation(idChecklist, weekChecklist) {
+    $.ajax({
+        url: urlPath + '/api/form/032/log/get/detail',
+        cache: false,
+        method: "POST",
+        data: JSON.stringify({ id: idChecklist, week: weekChecklist, group: "FUEL_STATION" }),
+        contentType: "application/json; charset=utf-8",
+        complete: function (res) {
+            console.log(res.responseJSON.Value);
+            tableChecklist = $('#tblDetailStation').DataTable({
+                "data": res.responseJSON.Value,
+                "destroy": true,
+                "scrollY": true,
+                "autoWidth": true,
+                "searching": false,
+                "info": false,
+                "columns": [
+                    {
+                        "data": "id_questionaire",
+                        //width: '3%',
+                        className: 'dt-body-center dt-head-center',
+                        render: function (data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        },
+                        sortable: false,
+                    },
+                    {
+                        'data': 'questionaire_desc',
+                        className: 'dt-body-left dt-head-left dt-nowrap',
+                        //width: '60%',
+                        //render: function (data, type, row) {
+                        //    return '<span style="white-space:wrap">' + row.questionaire_desc + "</span>";
+                        //},
+                        sortable: false,
+                    },
+                    {
+                        'data': 'chcecklist_val_desc',
+                        className: 'dt-body-center dt-head-center dt-nowrap',
+                        //width: '10%',
+                        sortable: false,
+                    },
+                    {
+                        'data': 'questionaire_comment',
+                        className: 'dt-body-left dt-head-center dt-nowrap',
+                        //width: '20%',
+                        sortable: false,
+                    },
+                ],
+            })
+        }
+    })
+}
+
+function loadDetailTruck(idChecklist, weekChecklist) {
+    $.ajax({
+        url: urlPath + '/api/form/032/log/get/detail',
+        cache: false,
+        method: "POST",
+        data: JSON.stringify({ id: idChecklist, week: weekChecklist, group: "FUEL_TRUCK" }),
+        contentType: "application/json; charset=utf-8",
+        complete: function (res) {
+            console.log(res.responseJSON.Value);
+            tableChecklist = $('#tblDetailTruck').DataTable({
+                "data": res.responseJSON.Value,
+                "destroy": true,
+                "scrollY": true,
+                "autoWidth": true,
+                "searching": false,
+                "info": false,
+                "columns": [
+                    {
+                        "data": "id_questionaire",
+                        //width: '3%',
+                        className: 'dt-body-center dt-head-center',
+                        render: function (data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        },
+                        sortable: false,
+                    },
+                    {
+                        'data': 'questionaire_desc',
+                        className: 'dt-body-left dt-head-left',
+                        //width: '60%',
+                        //render: function (data, type, row) {
+                        //    return '<span style="white-space:wrap">' + row.questionaire_desc + "</span>";
+                        //},
+                        sortable: false,
+                    },
+                    {
+                        'data': 'chcecklist_val_desc',
+                        className: 'dt-body-center dt-head-center dt-nowrap',
+                        //width: '10%',
+                        sortable: false,
+                    },
+                    {
+                        'data': 'questionaire_comment',
+                        className: 'dt-body-left dt-head-center dt-nowrap',
+                        //width: '20%',
+                        sortable: false,
+                    },
+                ],
+            })
+        }
+    })
+}
+
+$('#tblChecklist tbody').on('click', '#detailWeek1', function () {
+    var data = table1.row($(this).parents('tr')).data();
+    console.log(data);
+    loadDetailStation(data.id_checklist, 1);
+    loadDetailTruck(data.id_checklist, 1);
+
+    document.getElementById("lblNik").innerHTML = data.checklist_by;
+    document.getElementById("lblNama").innerHTML = data.checklist_name;
+    document.getElementById("lblMinggu").innerHTML = "Minggu Ke 1";
+})
+
+$('#tblChecklist tbody').on('click', '#detailWeek2', function () {
+    var data = table1.row($(this).parents('tr')).data();
+    console.log(data);
+    loadDetailStation(data.id_checklist, 2);
+    loadDetailTruck(data.id_checklist, 2);
+
+    document.getElementById("lblNik").innerHTML = data.checklist_by;
+    document.getElementById("lblNama").innerHTML = data.checklist_name;
+    document.getElementById("lblMinggu").innerHTML = "Minggu Ke 2";
+})
+
+$('#tblChecklist tbody').on('click', '#detailWeek3', function () {
+    var data = table1.row($(this).parents('tr')).data();
+    console.log(data);
+    loadDetailStation(data.id_checklist, 3);
+    loadDetailTruck(data.id_checklist, 3);
+
+    document.getElementById("lblNik").innerHTML = data.checklist_by;
+    document.getElementById("lblNama").innerHTML = data.checklist_name;
+    document.getElementById("lblMinggu").innerHTML = "Minggu Ke 3";
+})
+
+$('#tblChecklist tbody').on('click', '#detailWeek4', function () {
+    var data = table1.row($(this).parents('tr')).data();
+    console.log(data);
+    loadDetailStation(data.id_checklist, 4);
+    loadDetailTruck(data.id_checklist, 4);
+
+    document.getElementById("lblNik").innerHTML = data.checklist_by;
+    document.getElementById("lblNama").innerHTML = data.checklist_name;
+    document.getElementById("lblMinggu").innerHTML = "Minggu Ke 4";
+})
+
+$('#tblChecklist tbody').on('click', '#detailWeek5', function () {
+    var data = table1.row($(this).parents('tr')).data();
+    console.log(data);
+    loadDetailStation(data.id_checklist, 1);
+    loadDetailTruck(data.id_checklist, 1);
+
+    document.getElementById("lblNik").innerHTML = data.checklist_by;
+    document.getElementById("lblNama").innerHTML = data.checklist_name;
+    document.getElementById("lblMinggu").innerHTML = "Minggu Ke 5";
+})
 
 $('#tblChecklist tbody').on('click', '#fogcWeek1', function () {
     var data = table1.row($(this).parents('tr')).data();

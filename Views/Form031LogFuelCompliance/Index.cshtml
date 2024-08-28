@@ -33,21 +33,25 @@
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Nama</th>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Jabatan</th>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Site</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Detail Week1</th>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder">Week 1</th>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder">Validasi W1</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Detail Week2</th>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder">Week 2</th>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder">Validasi W2</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Detail Week3</th>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder">Week 3</th>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder">Validasi W3</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Detail Week4</th>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder">Week 4</th>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder">Validasi W4</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder ps-2">Detail Week5</th>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder">Week 5</th>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder">Validasi W5</th>
                                         <th class="text-uppercase text-secondary text-md font-weight-bolder">Summary Monthly</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
                                 </tbody>
                             </table>
                         </div>
@@ -72,7 +76,7 @@
             <input type="hidden" id="txtYear" />
             <input type="hidden" id="txtMonth" />
             <input type="hidden" id="txtWeek" />
-            <input type="hidden" id="txtScore" /> 
+            <input type="hidden" id="txtScore" />
             <input type="hidden" id="txtFlag" />
             <div class="modal-body">
                 <div class="input-group input-group-static">
@@ -98,5 +102,59 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modalChecklist" role="dialog" aria-labelledby="modalChecklistLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl modal-fullscreen" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-normal" id="exampleModalLabel">
+                    Detail Checklist <label class="text-sm" id="lblNik"></label> <label class="text-sm" id="lblNama"></label> <label class="text-sm" id="lblMinggu"></label>
+                </h5>
+                <button type="button" class="btn-md btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="table-responsive p-0">
+                            <table class="table table-xs text-xs w-auto compact table-bordered align-items-center mb-0" id="tblDetailStation" data-paging="false">
+                                <thead>
+                                    <tr>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">#</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">Fuel Station</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Ya/Tidak</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="table-responsive p-0">
+                            <table class="table table-xs text-xs w-auto compact table-bordered align-items-center mb-0" id="tblDetailTruck" data-paging="false">
+                                <thead>
+                                    <tr>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">#</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">Fuel Truck</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Ya/Tidak</th>
+                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script src="~/Scripts/page/smf.fm031log.js"></script>
