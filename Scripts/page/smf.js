@@ -12,13 +12,15 @@ $(document).ready(function () {
 
 
 function getMenu() {
+    const searchParams = new URLSearchParams(window.location.search);
+
     var i = 0;
     var j = 0;
     $.ajax({
         url: urlPath + '/api/form/user/get/menu',
         cache: false,
         method: "POST",
-        //data: JSON.stringify({ id: $("#ddCategory").val() }),
+        data: JSON.stringify({ id: searchParams.get('id') }),
         contentType: "application/json; charset=utf-8",
         complete: function (res) {
             document.getElementById("menuForm").innerHTML = "";
